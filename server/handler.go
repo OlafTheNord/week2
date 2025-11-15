@@ -7,7 +7,7 @@ import (
 
 func RunServer() {
 	mux := http.NewServeMux()
-	log.Print("Сервер запущен...")
+	log.Print("server start")
 	err := http.ListenAndServe(":8080", mux)
 	if err != nil {
 		log.Fatal(err)
