@@ -19,14 +19,13 @@ func EmployeeGetAll(name string) (error, []models.Employee) {
 	if err != nil {
 		return fmt.Errorf("cannot parse employee file: %v", err), nil
 	}
-	/*
-		//check
-		err = Validator(employees)
-		if err != nil {
-			return err, nil
-		}
 
-	*/
+	//check
+	err = Validator(employees)
+	if err != nil {
+		return err, nil
+	}
+
 	return nil, employees
 }
 
