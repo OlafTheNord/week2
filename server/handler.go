@@ -14,10 +14,10 @@ func NewHandler() *Handler {
 	return &Handler{}
 }
 
-func (h *Handler) GetAll(w http.ResponseWriter, r *http.Request) {
+func (h *Handler) GetAll(w http.ResponseWriter, _ *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
-	err, employees := service.EmployeeGetAll("src/employees.json")
+	employees, err := service.EmployeeGetAll("src/employees.json")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -40,7 +40,7 @@ func (h *Handler) GetById(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	err, emp := service.EmployeeGetById("src/employees.json", ids)
+	emp, err := service.EmployeeGetById("src/employees.json", ids)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return

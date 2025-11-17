@@ -33,5 +33,12 @@
     "department": "IT",
     "salary": 4450.80,
     "hire_date": "2024-03-22"
+  },
+  {
+    "id": 0,
+    "name": "David Brown",
+    "department": "IT",
+    "salary": 4450.80,
+    "hire_date": "2024-03-22"
   }
 ]
