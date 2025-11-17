@@ -22,8 +22,7 @@ func (h *Handler) GetAll(w http.ResponseWriter, _ *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-	err = json.NewEncoder(w).Encode(employees)
-	if err != nil {
+	if err = json.NewEncoder(w).Encode(employees); err != nil {
 		log.Fatal(err)
 	}
 }
